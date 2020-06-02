@@ -1,7 +1,8 @@
 import React from 'react';
 import './login.css';
 import {userLogin} from '../../services/AppService';
-import Loader from '../../components/Loader/Loader'
+import Loader from '../../components/Loader/Loader';
+import {Redirect,Link} from 'react-router-dom';
 
 
 class Login extends React.Component{
@@ -15,7 +16,8 @@ class Login extends React.Component{
             password:"",
             isButtonDisabled:false,
             isLoading:false,
-            responseData:[]
+            isSuccess:false,
+            responseData:[{}]
         }
 
         this.onLoginClicked = this.onLoginClicked.bind(this)
@@ -43,14 +45,23 @@ class Login extends React.Component{
         await userLogin(userNameText)
             .then(response => {
                 console.log(response,"1");
-                if(response.length){
-                this.setState({responseData:response[0]})
-                console.log(this.state.data,"Mani");
-                this.setState({isLoading:false})
+                const object = response.data;
+                console.log(response.data,"data")
+                if(object){
+                this.setState({responseData:response.data[0]})
+                console.log(this.state.responseData,"Mani");
+                
+                if(this.CheckResponseData())
+                {
+                    this.props.history.push('/Home');
+                    this.setState({isLoading:false,isSuccess:true});
+                }
+                this.setState({isLoading:false});
                 }
                 else
                 {
                     this.setState({isLoading:false})
+                    alert("Please valid credential!");
                 }
             })
             .catch(error => {
@@ -59,16 +70,34 @@ class Login extends React.Component{
             })
     }
 
+    CheckResponseData(responseData)
+    {
+        const username = this.state.responseData.username;
+        const password =this.state.responseData.password;
+        if(username === this.state.userName && this.state.password === password){
+
+            return true;
+        }
+        else{
+            alert("Please enter valid credential!")
+            return false;
+        }
+    
+    }
+
 
 
     render() {
 
+        
         return (
+            
 
           <div className='mainBody'>
           {this.state.isLoading?<div className="loaderLayout">
           <Loader/>
            </div>:null
+          
           }
           <div className='loginContent'>
            
