@@ -7,6 +7,8 @@ import {GetProductList,GetProductListOnSearch} from '../../services/AppService';
 
 
 class HomePage extends Component {
+
+    // default state set
     constructor(props) {
       super(props);
       this.state = {
@@ -17,6 +19,7 @@ class HomePage extends Component {
       this.ProductList = this.ProductList.bind(this)
     }
 
+    // on page load
     componentDidMount()
     {
         this.ProductList();
@@ -48,20 +51,20 @@ class HomePage extends Component {
        
    }
 
+   /// hitting of search api after user typing stop
   async GetSearchProduct(searchtext)
    {
         if(this.state.searchText)
-        {
-            
+        { 
             clearTimeout(this.typingTimer);
             this.typingTimer = setTimeout(() => {
                 this.SearchApiCall(searchtext)
               }, 0);
-           
         }
 
    }
 
+   // search Api call && data[] updation
   async SearchApiCall(searchtext)
    {
         this.setState({isLoading:true})
@@ -83,6 +86,7 @@ class HomePage extends Component {
     clearTimeout(this.typingTimer);
     }
   
+    // rendering of page
     render() {
        
       return (
@@ -91,10 +95,9 @@ class HomePage extends Component {
             <Loader/>
              </div>:null
             }
-          
             <div className="topContent" >
             <div className="logoLayout">
-            <span>Mani</span>
+            <h1 className="logoText">sCart</h1>
             </div>
 
             <div className="searchLayout">

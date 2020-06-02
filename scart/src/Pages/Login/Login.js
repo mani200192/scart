@@ -2,7 +2,7 @@ import React from 'react';
 import './login.css';
 import {userLogin} from '../../services/AppService';
 import Loader from '../../components/Loader/Loader';
-import {Redirect,Link} from 'react-router-dom';
+
 
 
 class Login extends React.Component{
@@ -78,29 +78,21 @@ class Login extends React.Component{
 
             return true;
         }
-        else{
+        else
+        {
             alert("Please enter valid credential!")
-            return false;
+            
         }
-    
     }
 
-
-
     render() {
-
-        
         return (
-            
-
           <div className='mainBody'>
           {this.state.isLoading?<div className="loaderLayout">
           <Loader/>
            </div>:null
-          
           }
           <div className='loginContent'>
-           
             <h1 className="logoText">sCart</h1>
             <input value={this.state.userName} onChange={e=> this.userNameInput(e)} className='userInput' name="user name" type="text" placeholder="Enter your username" />
             <input value={this.state.password} onChange={e=>this.userPasswordnput(e)} className='passwordInput'
@@ -108,10 +100,8 @@ class Login extends React.Component{
                 type="password"
                 placeholder="Enter your password"
              />
-
              <button  onClick={this.onLoginClicked} className='loginButton'>Login
              </button>
-
           </div>
           </div>
         )
