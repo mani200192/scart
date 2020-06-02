@@ -1,0 +1,24 @@
+.searchBody
+{
+   position:absolute; 
+   width: 250px; 
+   height: 40px;
+   border-radius: 20px;
+    top:8%; 
+    border: black;
+
+}
+
+
+.search {
+    -webkit-appearance: none;
+    border: black;
+    outline: black;
+    padding: 10px;
+    width: 250px;
+    line-height: 30px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-align: center;
+  }
