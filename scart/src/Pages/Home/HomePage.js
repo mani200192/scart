@@ -2,26 +2,51 @@ import React, { Component } from 'react';
 import './HomePage.css';
 import Productlist from '../../components/ProductList /productList'
 import SearchBox from '../../components/SearchComponent/SearchBox'
-import Loader from '../../components/Loader/Loader'
+import Loader from '../../components/Loader/Loader';
+import {GetProductList} from '../../services/AppService';
+
 
 class HomePage extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        loading:false
+        isLoading:false,
+         data:[],
+         searchText:"", 
       };
+      this.ProductList = this.ProductList.bind(this)
     }
 
-   async handleSearch(text){
+    componentDidMount()
+    {
+        this.ProductList();
+    }
 
+    // Get api call Product_Listing_Url
+    async ProductList()
+    {
+        this.setState({isLoading:true})
+        await GetProductList()
+        .then(response => {
+            console.log(response.data);
+            this.setState({isLoading:false,data:response.data})
+           console.log(this.data);
+        })
+        .catch(error => {
+            console.log(error);
+            this.setState({isLoading:false})
+        })
+    }
+
+   async handleSearch(text)
+   {
        await console.log(text);
-
-    }
+   }
   
     render() {
       return (
         <div className="mainContent">
-            {this.state.loading?<div className="loaderLayout">
+            {this.state.isLoading?<div className="loaderLayout">
             <Loader/>
              </div>:null
             }
@@ -44,7 +69,7 @@ class HomePage extends Component {
             <span>BHUSHAN</span>
             </div>
             <div className="productListContent">
-            <Productlist/>
+            <Productlist value={this.state} />
             </div>
          </div>
       );

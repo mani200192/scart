@@ -6,11 +6,11 @@ import  './Product.css';
     return(
         <div className='collection-item'>
         <div className='image'
-        style={{backgroundImage:`url(${props.value.imageUrl})`
+        style={{backgroundImage:`url(${props.value.image})`
          }}
         />
         <div className='collection-footer'>
-         <span className='name'>{props.value.name}
+         <span className='name'>{props.value.title}
          </span>
          <div className='colorBody'>
          <span>Color</span>
@@ -20,7 +20,7 @@ import  './Product.css';
          </div>
 
          <div className="bottomFooter">
-         <span   className='brandName'>{props.value.price}</span>
+         <span   className='brandName'>{props.value.price.final_price}</span>
          <button className='addItemButton'>Add item
          </button>
          </div>
