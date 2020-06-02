@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import {User_Login ,Product_Listing_Url} from '../Config/ServiceUrl';
+import {User_Login ,Product_Listing_Url,Product_Search_ByName} from '../Config/ServiceUrl';
 
 
 //Service call to check login authentication?
@@ -12,5 +12,11 @@ export const userLogin = (userName) => {
 export const GetProductList = () => 
 {
     return Axios.get(`${Product_Listing_Url}`);
+}
+
+//Service call to get all product on search text
+export const GetProductListOnSearch = (searchtext) => 
+{
+    return Axios.get(`${Product_Search_ByName}`+ searchtext);
 }
 

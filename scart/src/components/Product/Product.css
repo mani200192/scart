@@ -46,7 +46,9 @@
 {
   margin-top: 5px;
   width: 80%;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
+  word-wrap: none;
+  
 }
   
  .colorBody 
@@ -55,6 +57,7 @@
     flex-direction: row;
     display: inline-flex;
     margin-top: 5px;
+   
 }
 
 

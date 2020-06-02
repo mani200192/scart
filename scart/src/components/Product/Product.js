@@ -10,7 +10,7 @@ import  './Product.css';
          }}
         />
         <div className='collection-footer'>
-         <span className='name'>{props.value.title}
+         <span  className='name'>{props.value.title}
          </span>
          <div className='colorBody'>
          <span>Color</span>
@@ -20,7 +20,7 @@ import  './Product.css';
          </div>
 
          <div className="bottomFooter">
-         <span   className='brandName'>{props.value.brand}</span>
+         <span style={{overflow: 'hidden', textOverflow: 'ellipsis'}}  className='brandName'>{props.value.brand}</span>
          <button className='addItemButton'>Add item
          </button>
          </div>

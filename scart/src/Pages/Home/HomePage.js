@@ -3,7 +3,7 @@ import './HomePage.css';
 import Productlist from '../../components/ProductList /productList'
 import SearchBox from '../../components/SearchComponent/SearchBox'
 import Loader from '../../components/Loader/Loader';
-import {GetProductList} from '../../services/AppService';
+import {GetProductList,GetProductListOnSearch} from '../../services/AppService';
 
 
 class HomePage extends Component {
@@ -38,12 +38,58 @@ class HomePage extends Component {
         })
     }
 
-   async handleSearch(text)
+    // Get product on search text by calling api
+
+   async handleSearch(searchtext)
    {
-       await console.log(text);
+      // await console.log(text);
+        this.setState({searchText:searchtext})
+       this.GetSearchProduct(searchtext);
+       
    }
+
+  async GetSearchProduct(searchtext)
+   {
+        if(this.state.searchText)
+        {
+            
+            clearTimeout(this.typingTimer);
+            this.typingTimer = setTimeout(() => {
+                this.SearchApiCall(searchtext)
+              }, 0);
+           
+        }
+    else
+        {
+
+
+        }
+
+   }
+
+  async SearchApiCall(searchtext)
+   {
+    this.setState({isLoading:true})
+    await GetProductListOnSearch(searchtext)
+    .then(response => {
+        this.setState({data:[],isLoading:true})
+        console.log(response.data);
+        this.setState({isLoading:false,data:response.data})
+    console.log(this.data);
+    })
+    .catch(error => {
+        console.log(error);
+        this.setState({isLoading:false,data:[]})
+    })
+
+   }
+
+   componentWillUnmount() {
+    clearTimeout(this.typingTimer);
+  }
   
     render() {
+       
       return (
         <div className="mainContent">
             {this.state.isLoading?<div className="loaderLayout">
