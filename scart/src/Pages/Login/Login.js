@@ -61,7 +61,7 @@ class Login extends React.Component{
                 else
                 {
                     this.setState({isLoading:false})
-                    alert("Please valid credential!");
+                    alert("Please enter valid credential!");
                 }
             })
             .catch(error => {
