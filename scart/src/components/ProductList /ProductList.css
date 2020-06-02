@@ -1,0 +1,13 @@
+.productlist{
+    background-color:transparent;
+    width: 70vw;
+    margin: 0 auto;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-gap: 10px;
+    position: absolute;
+    left: 0%;
+    height: 95%;
+}
+
+

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './HomePage.css';
+import Productlist from '../../components/ProductList /productList'
 
 
 
@@ -21,7 +22,7 @@ class HomePage extends Component {
             <span>BHUSHAN</span>
             </div>
             <div className="productListContent">
-            <span>SINGH</span>
+            <Productlist/>
             </div>
          </div>
       );
