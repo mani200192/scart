@@ -14,7 +14,7 @@
   width: 100%;
   height: 18%;
   top: 0%;
-  background-color:red;
+  background-color:beige;
 }
 
 
@@ -35,6 +35,45 @@
   top: 18%;
   left:30%;
   background-color:transparent;
+}
+
+.logoLayout
+{
+  background-color:transparent;
+  position: absolute;
+  left: 0%;
+  width: 30%;
+  height: 100%;
+}
+
+
+.searchLayout
+{
+  background-color:transparent;
+  position: absolute;
+  left: 38%;
+  width: 30%;
+  height: 100%;
+  top:18%;
+}
+
+
+.cartShowLayput
+{
+  background-color:transparent;
+  position: absolute;
+  right: 0%;
+  width: 30%;
+  height: 100%;
+}
+
+.loaderLayout{
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 50;
+
 }
 
 
