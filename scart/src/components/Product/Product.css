@@ -65,7 +65,7 @@
   width:15px;
   height: 15px;
   border-color: black;
-  background-color: blue;
+  
 }
 
 .bottomFooter
@@ -86,6 +86,8 @@
   margin-top: 8px;
   width: 80%;
   margin-bottom: 15px;
+  text-overflow: clip;
+  word-wrap: initial;
 }
   
  .addItemButton

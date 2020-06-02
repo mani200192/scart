@@ -14,13 +14,13 @@ import  './Product.css';
          </span>
          <div className='colorBody'>
          <span>Color</span>
-         <div className="colorSquare"/>
+         <div style={{backgroundColor:props.value.colour.color}} className="colorSquare"/>
          </div>
         
          </div>
 
          <div className="bottomFooter">
-         <span   className='brandName'>{props.value.price.final_price}</span>
+         <span   className='brandName'>{props.value.brand}</span>
          <button className='addItemButton'>Add item
          </button>
          </div>
