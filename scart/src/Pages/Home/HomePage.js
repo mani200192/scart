@@ -59,34 +59,29 @@ class HomePage extends Component {
               }, 0);
            
         }
-    else
-        {
-
-
-        }
 
    }
 
   async SearchApiCall(searchtext)
    {
-    this.setState({isLoading:true})
-    await GetProductListOnSearch(searchtext)
-    .then(response => {
-        this.setState({data:[],isLoading:true})
-        console.log(response.data);
-        this.setState({isLoading:false,data:response.data})
-    console.log(this.data);
-    })
-    .catch(error => {
-        console.log(error);
-        this.setState({isLoading:false,data:[]})
-    })
-
+        this.setState({isLoading:true})
+        await GetProductListOnSearch(searchtext)
+        .then(response => {
+            this.setState({data:[]})
+            console.log(response.data);
+            this.setState({isLoading:false,data:response.data})
+        console.log(this.data);
+        })
+        .catch(error => {
+            console.log(error);
+            this.setState({isLoading:false,data:[]})
+        })
    }
 
-   componentWillUnmount() {
+   componentWillUnmount() 
+   {
     clearTimeout(this.typingTimer);
-  }
+    }
   
     render() {
        
