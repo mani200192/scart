@@ -46,9 +46,12 @@
 {
   margin-top: 5px;
   width: 80%;
-  margin-bottom: 5px;
-  word-wrap: none;
-  
+  margin-bottom: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 2px;
+  margin-right: 2px;
 }
   
  .colorBody 
