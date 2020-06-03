@@ -16,7 +16,21 @@
     position: absolute;
     top:4%;
     left:5%;
+}
 
+.textStyle
+{
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
+.checkBoxBody
+{
+    position: absolute;
+    top:25%;
+    left:5%;
+    background-color:transparent;
 }
 
