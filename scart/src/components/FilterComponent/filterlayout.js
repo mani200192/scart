@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './filterLayout.css'
-
+import CheckBoxFilter from './/CheckBoxFilter/checkBoxFilter'
 
 
 
@@ -24,13 +24,12 @@ class Filter extends Component
             <div className='filterLayoutBody'>
 
             <div className='colorFilterLayout' >
-                <span>mani1</span>
+             <CheckBoxFilter/>
             </div>
 
             <div className='brandFilterLayout' >
             
-            <span className='brandFilterLayout'>brandFilter</span>
-            
+            <CheckBoxFilter/>
             </div>
 
             <div className='priceFilterLayout' >
