@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import './filterLayout.css'
 import CheckBoxFilter from './/CheckBoxFilter/checkBoxFilter'
-
+import {GetProductFilters} from '../../services/AppService';
 
 
 class Filter extends Component
@@ -16,6 +16,28 @@ class Filter extends Component
                 
             }
         }
+
+    componentDidMount()
+    {
+        // get all filter products
+        this.GetFilterProducts();
+
+    }   
+    
+   async GetFilterProducts()
+    {
+        this.setState({isLoading:true})
+        await GetProductFilters()
+        .then(response => {
+            console.log(response.data);
+           
+        })
+        .catch(error => {
+            console.log(error);
+           
+        })
+
+    }
 
     render()
      {

@@ -1,8 +1,24 @@
+
+.checkBodyMainBody
+{
+
+    position: absolute;
+    top:25%;
+    left:5%;
+    background-color:transparent;
+    width: 90%;
+    height: 70%;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr ;
+    grid-gap: 3px;
+}
+
+
 .checkBoxFilterLyout{
     position: absolute;
     top: 5%;
     left: 5%;
-    width: 80%;
+    width: 90%;
     height: 90%;
     border-color: gray;
     border-width: 2px;
@@ -29,8 +45,8 @@
 .checkBoxBody
 {
     position: absolute;
-    top:25%;
-    left:5%;
+    top:0%;
+    left:0%;
     background-color:transparent;
 }
 

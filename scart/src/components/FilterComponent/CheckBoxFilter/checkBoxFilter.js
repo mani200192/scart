@@ -11,6 +11,7 @@ function CheckBoxFilter(props)
 
          <div className='checkBoxFilterLyout' >
          <span className='titleStyle' >Color</span>
+         <div className='checkBodyMainBody' >
          <div className='checkBoxBody' >
           <input
             type="checkbox"
@@ -18,6 +19,7 @@ function CheckBoxFilter(props)
           />
           <span className='textStyle'>Label Text</span>
     
+         </div>
          </div>
          </div>
     )
