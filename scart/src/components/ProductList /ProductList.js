@@ -14,7 +14,7 @@ function ProductList(props)
                 
                 {
                     (props.value.data.map((item)=>(
-                       <Product key={item.id} value={item}/>
+                       <Product onClicked={()=>props.onClick(item.id)}  key={item.id} value={item}/>
                    )) )
                 }
            </div>

@@ -4,6 +4,8 @@ import Productlist from '../../components/ProductList /productList'
 import SearchBox from '../../components/SearchComponent/SearchBox'
 import Loader from '../../components/Loader/Loader';
 import {GetProductList,GetProductListOnSearch} from '../../services/AppService';
+import PersonIcon from '@material-ui/icons/Person';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 
 class HomePage extends Component {
@@ -14,7 +16,8 @@ class HomePage extends Component {
       this.state = {
         isLoading:false,
          data:[],
-         searchText:"", 
+         searchText:"",
+         addProductCount:"0"
       };
       this.ProductList = this.ProductList.bind(this)
     }
@@ -85,6 +88,12 @@ class HomePage extends Component {
    {
     clearTimeout(this.typingTimer);
     }
+
+    addItem(e)
+    {
+      console.log(e);
+
+    }
   
     // rendering of page
     render() {
@@ -99,13 +108,20 @@ class HomePage extends Component {
             <div className="logoLayout">
             <h1 className="logoText">sCart</h1>
             </div>
-
             <div className="searchLayout">
             <SearchBox onChange={e => this.handleSearch(e.target.value)}/>
             </div>
 
             <div className="cartShowLayput">
-            <span>mani</span>
+            
+            <div className='profileLayout'>
+            <PersonIcon  />
+            <span className='profileNameStyle' >amigo</span>
+            </div>
+            <div className='addCartItemLayout'>
+            <ShoppingCartIcon/>
+            <span className='cartItemStyle'>{this.state.addProductCount}</span>
+            </div>
             </div>
            
             </div>
@@ -113,7 +129,7 @@ class HomePage extends Component {
             <span>BHUSHAN</span>
             </div>
             <div className="productListContent">
-            <Productlist value={this.state} />
+            <Productlist onClick={(e)=>this.addItem(e)} value={this.state} />
             </div>
          </div>
       );

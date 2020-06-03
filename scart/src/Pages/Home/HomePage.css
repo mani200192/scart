@@ -68,6 +68,42 @@
   height: 100%;
 }
 
+.profileLayout
+{
+  background-color:transparent;
+  position: absolute;
+  right: 0%;
+  width: 100%;
+  height: 50%;
+  padding-top: 20px;
+}
+
+.addCartItemLayout
+{
+  background-color:transparent;
+  position: absolute;
+  right: 0%;
+  width: 100%;
+  height: 50%;
+  top:51%;
+  padding-top: 5px;
+}
+.profileNameStyle
+{
+    position: absolute;
+    padding-top: 1%;
+    
+
+}
+
+.cartItemStyle
+{
+    position: absolute;
+    padding-top: 1%;
+    
+
+}
+
 .loaderLayout{
 
   position: absolute;
