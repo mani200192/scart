@@ -9,6 +9,9 @@ function CheckBoxFilter(props)
     return(
 
          <div className='checkBoxFilterLyout' >
+         <span className='titleStyle' >Color</span>
+         <div>
+         </div>
          </div>
     )
 
