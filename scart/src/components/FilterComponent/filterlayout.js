@@ -9,11 +9,10 @@ class Filter extends Component
     
         constructor(props)
         {
-
             super(props);
             this.state =
             {
-                
+               collection:[] 
             }
         }
 
@@ -30,22 +29,25 @@ class Filter extends Component
         await GetProductFilters()
         .then(response => {
             console.log(response.data);
-           
+            this.setState({collections:response.data})
         })
         .catch(error => {
             console.log(error);
            
         })
-
     }
 
     render()
      {
+         const {collections} = this.state.collection;
         return (
 
             <div className='filterLayoutBody'>
 
             <div className='colorFilterLayout' >
+            {
+                 <CheckBoxFilter value={this.state.collections}/>
+            }
              <CheckBoxFilter/>
             </div>
 
@@ -65,7 +67,6 @@ class Filter extends Component
             </div>
         )
     }
-
 }
 
 export default Filter;
