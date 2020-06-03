@@ -6,6 +6,7 @@ import Loader from '../../components/Loader/Loader';
 import {GetProductList,GetProductListOnSearch} from '../../services/AppService';
 import PersonIcon from '@material-ui/icons/Person';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Filter from '../../components/FilterComponent/filterlayout';
 
 
 class HomePage extends Component {
@@ -126,7 +127,7 @@ class HomePage extends Component {
            
             </div>
             <div className="leftFilterContent">
-            <span>BHUSHAN</span>
+            <Filter/>
             </div>
             <div className="productListContent">
             <Productlist onClick={(e)=>this.addItem(e)} value={this.state} />

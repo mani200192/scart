@@ -24,7 +24,7 @@
   width: 30%;
   height: 100%;
   top: 18%;
-  background-color:black;
+  background-color:transparent;
 }
 
 
@@ -92,15 +92,12 @@
 {
     position: absolute;
     padding-top: 1%;
-    
-
 }
 
 .cartItemStyle
 {
     position: absolute;
-    padding-top: 1%;
-    
+    padding-top: 1%;   
 
 }
 
@@ -110,7 +107,6 @@
   left: 50%;
   top: 50%;
   z-index: 50;
-
 }
 
 
