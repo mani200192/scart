@@ -105,6 +105,10 @@
     margin-top: 8px;
     margin-right: 10px;
     border-radius: 30px;
+    border-color: transparent;
+    border-style: none;
+    outline: none;
+    cursor: pointer;
 }
   
 
