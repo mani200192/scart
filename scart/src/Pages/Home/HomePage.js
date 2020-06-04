@@ -18,7 +18,7 @@ class HomePage extends Component {
         isLoading:false,
          data:[],
          searchText:"",
-         addProductCount:"0"
+         addProductCount:0
       };
       this.ProductList = this.ProductList.bind(this)
     }
@@ -93,6 +93,8 @@ class HomePage extends Component {
     addItem(e)
     {
       console.log(e);
+
+      this.setState({addProductCount:this.state.addProductCount+1})
 
     }
   

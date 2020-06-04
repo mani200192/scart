@@ -21,7 +21,7 @@ import  './Product.css';
 
          <div className="bottomFooter">
          <span style={{overflow: 'hidden', textOverflow: 'ellipsis'}}  className='brandName'>{props.value.brand}</span>
-         <button onClick={props.onClicked(props.value.id)} className='addItemButton'>Add item
+         <button onClick={()=>props.onClicked(props.value.id)} className='addItemButton'>Add item
          </button>
          </div>
         </div>
