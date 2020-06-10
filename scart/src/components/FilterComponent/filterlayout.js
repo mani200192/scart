@@ -12,7 +12,7 @@ class Filter extends Component
             super(props);
             this.state =
             {
-               collection:[] 
+               collection:[]
             }
         }
 
@@ -29,7 +29,7 @@ class Filter extends Component
         await GetProductFilters()
         .then(response => {
             console.log(response.data);
-            this.setState({collections:response.data})
+            this.setState({collection:response.data})
         })
         .catch(error => {
             console.log(error);
@@ -39,31 +39,18 @@ class Filter extends Component
 
     render()
      {
-         const {collections} = this.state.collection;
+         const collections = this.state.collection;
+         console.log(collections);
         return (
 
             <div className='filterLayoutBody'>
-
             <div className='colorFilterLayout' >
-            {
-                 <CheckBoxFilter value={this.state.collections}/>
-            }
-             <CheckBoxFilter/>
+            {collections?collections.map((items, index) => (
+                <CheckBoxFilter key={items.type} value={items} />
+                )):null
+             }      
             </div>
-
-            <div className='brandFilterLayout' >
-            
-            <CheckBoxFilter/>
-            </div>
-
-            <div className='priceFilterLayout' >
-            <span>priceFilter</span>
-            </div>
-
-            <div className='discountFilterLayout' >
-            <span>discountFilter</span>
-            </div>
-
+           
             </div>
         )
     }

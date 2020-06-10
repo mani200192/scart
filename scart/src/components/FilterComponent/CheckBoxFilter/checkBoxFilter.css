@@ -7,7 +7,7 @@
     left:5%;
     background-color:transparent;
     width: 90%;
-    height: 70%;
+    height: 30px;
     display:grid;
     grid-template-columns:1fr 1fr 1fr ;
     grid-gap: 3px;
@@ -15,11 +15,9 @@
 
 
 .checkBoxFilterLyout{
-    position: absolute;
-    top: 5%;
-    left: 5%;
+  
     width: 90%;
-    height: 90%;
+    height: 100px;
     border-color: gray;
     border-width: 2px;
     border-radius: 2px;

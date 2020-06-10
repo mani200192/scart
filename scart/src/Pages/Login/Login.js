@@ -81,7 +81,7 @@ class Login extends React.Component{
         else
         {
             alert("Please enter valid credential!")
-            
+            return false;
         }
     }
 
